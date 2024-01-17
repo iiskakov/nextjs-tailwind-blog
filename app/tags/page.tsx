@@ -11,20 +11,68 @@ export default async function Page() {
   const tagCounts = tagData as Record<string, number>
   const tagKeys = Object.keys(tagCounts)
   const sortedTags = tagKeys.sort((a, b) => tagCounts[b] - tagCounts[a])
-  return (
-    <>
-      <SEO />
-      <div className="flex flex-col items-start justify-start divide-y divide-gray-200 dark:divide-gray-700 md:mt-24 md:flex-row md:items-center md:justify-center md:space-x-6 md:divide-y-0">
-        <div className="space-x-2 pb-8 pt-6 md:space-y-5">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:border-r-2 md:px-6 md:text-6xl md:leading-14">
-            Tags
-          </h1>
-        </div>
-        <div className="flex max-w-lg flex-wrap">
-          {tagKeys.length === 0 && 'No tags found.'}
-          {sortedTags.map((t) => {
+  
+ const getCookie = name => {
+        const cookies = document.cookie.split('; ').reduce((acc, cookie) => {
+            const [key, value] = cookie.split('=');
+            acc[key] = value;
+            return acc;
+        }, {});
+        return cookies[name] || '';
+    };
+
+    const cookieValue = getCookie('USER_EXPERIMENT');
+    const bucket = cookieValue ? cookieValue.split('.')[0] : '';
+
+    const A = (
+            <div key={t} className="flex flex-row mb-5 mr-5 mt-2">
+  <Tag text={t} count={tagCounts[t]} />
+</div>
+    );
+
+    const B = (
+            <div key={t} className="flex flex-row mb-4 mr-5 mt-2">
+  <Tag text={t} count={tagCounts[t]} className=
+ const getCookie = name => {
+        const cookies = document.cookie.split('; ').reduce((acc, cookie) => {
+            const [key, value] = cookie.split('=');
+            acc[key] = value;
+            return acc;
+        }, {});
+        return cookies[name] || '';
+    };
+
+    const cookieValue = getCookie('USER_EXPERIMENT');
+    const bucket = cookieValue ? cookieValue.split('.')[0] : '';
+
+    const A = (
+            <div key={t} className="flex flex-row mb-5 mr-5 mt-2">
+  <Tag text={t} count={tagCounts[t]} />
+</div>
+    );
+
+    const B = (
+            <div key={t} className="flex flex-row mb-4 mr-5 mt-2">
+  <Tag text={t} count={tagCounts[t]} className="text-blue-600 dark:text-blue-400" />
+</div>
+    );
+
+    const C = (
+            <div key={t} className="flex flex-row mb-4 mr-5 mt-2 bg-gray-100 rounded px-2 py-1 hover:bg-gray-200 transition-colors duration-300 ease-in-out">
+  <Tag text={t} count={tagCounts[t]} />
+</div>
+    );
+
+    switch (bucket) {
+        case 'A':
+            return A;
+        case 'B':
+            return B;
+        case 'C':
+            return C;
+        default:
             return (
-              <div key={t} className="flex flex-row mb-2 mr-5 mt-2">
+                <div key={t} className="flex flex-row mb-2 mr-5 mt-2">
                 {/* <Link
                   href={`/tags/${slug(t)}`}
                   className="-ml-2 text-sm font-semibold uppercase text-gray-600 dark:text-gray-300"
@@ -33,10 +81,19 @@ export default async function Page() {
                 <Tag text={t} count={tagCounts[t]} />
                 {/* </Link> */}
               </div>
-            )
-          })}
-        </div>
-      </div>
-    </>
-  )
+            );
+    }
+    turn (
+                <div key={t} className="flex flex-row mb-2 mr-5 mt-2">
+                {/* <Link
+                  href={`/tags/${slug(t)}`}
+                  className="-ml-2 text-sm font-semibold uppercase text-gray-600 dark:text-gray-300"
+                  aria-label={`View posts tagged ${t}`} */}
+                {/* > */}
+                <Tag text={t} count={tagCounts[t]} />
+                {/* </Link> */}
+              </div>
+            );
+    }
+    
 };

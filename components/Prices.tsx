@@ -1,22 +1,4 @@
 export default function Prices() {
-    function CheckIcon(props) {
-        return (
-            <svg
-                {...props}
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-            >
-                <polyline points="20 6 9 17 4 12" />
-            </svg>
-        )
-    }
 
     return (
         <div className="container">
@@ -32,11 +14,9 @@ export default function Prices() {
                         </div>
                         <ul className="mt-4 space-y-2">
                             <li className="flex items-center">
-                                <CheckIcon className="text-white text-xs bg-green-500 rounded-full mr-2 p-1" />
                                 Community Forum Access
                             </li>
                             <li className="flex items-center">
-                                <CheckIcon className="text-white text-xs bg-green-500 rounded-full mr-2 p-1" />
                                 Exclusive In-Depth Tutorials
                             </li>
                         </ul>
@@ -53,11 +33,9 @@ export default function Prices() {
                         </div>
                         <ul className="mt-4 space-y-2">
                             <li className="flex items-center">
-                                <CheckIcon className="text-white text-xs bg-green-500 rounded-full mr-2 p-1" />
                                 All Premium Features Plus
                             </li>
                             <li className="flex items-center">
-                                <CheckIcon className="text-white text-xs bg-green-500 rounded-full mr-2 p-1" />
                                 One-on-One Mentorship
                             </li>
                         </ul>

@@ -33,23 +33,11 @@ export default function Prices() {
                         <ul className="mt-4 space-y-2">
                             <li className="flex items-center">
                                 <CheckIcon className="text-white text-xs bg-green-500 rounded-full mr-2 p-1" />
-                                Access to Standard Articles
-                            </li>
-                            <li className="flex items-center">
-                                <CheckIcon className="text-white text-xs bg-green-500 rounded-full mr-2 p-1" />
-                                Monthly Newsletter
-                            </li>
-                            <li className="flex items-center">
-                                <CheckIcon className="text-white text-xs bg-green-500 rounded-full mr-2 p-1" />
                                 Community Forum Access
                             </li>
                             <li className="flex items-center">
                                 <CheckIcon className="text-white text-xs bg-green-500 rounded-full mr-2 p-1" />
                                 Exclusive In-Depth Tutorials
-                            </li>
-                            <li className="flex items-center">
-                                <CheckIcon className="text-white text-xs bg-green-500 rounded-full mr-2 p-1" />
-                                Early Access to New Content
                             </li>
                         </ul>
                     </div>

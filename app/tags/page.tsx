@@ -21,7 +21,7 @@ export default async function Page() {
                     Subscribtion
                 </h1>
                 <p>
-                    Unlock coding excellence with our developer blog subscriptions. Choose from Basic, Pro, or Enterprise plans to access a wealth of expert articles, tutorials, and tools. Elevate your skills, stay ahead of tech trends, and make your mark in the coding world. Subscribe now – your next breakthrough in development awaits.
+                    Elevate your skills, stay ahead of tech trends, and make your mark in the coding world. Subscribe now – your next breakthrough in development awaits.
                 </p>
                 <Prices />
             </div>

@@ -20,8 +20,8 @@ export default async function Page() {
                 <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:border-r-2 md:text-6xl md:leading-14">
                     Subscribtion
                 </h1>
-                <p>
-                    Elevate your skills, stay ahead of tech trends, and make your mark in the coding world. Subscribe now – your next breakthrough in development awaits.
+                <p className="pb-8">
+                    Subscribe now – your next breakthrough in development awaits.
                 </p>
                 <Prices />
             </div>

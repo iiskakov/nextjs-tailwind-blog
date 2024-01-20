@@ -1,4 +1,23 @@
 export default function Prices() {
+    function CheckIcon(props) {
+        return (
+            <svg
+                {...props}
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            >
+                <polyline points="20 6 9 17 4 12" />
+            </svg>
+        )
+    }
+
     return (
         <div>
             <div className="container ">
@@ -28,7 +47,6 @@ export default function Prices() {
                             <button className="w-full">Subscribe</button>
                         </div>
                     </div>
-
                     <div className="relative flex flex-col p-6 bg-white shadow-lg rounded-lg dark:bg-zinc-850 justify-between border border-purple-500">
                         <div className="px-3 py-1 text-sm text-white bg-gradient-to-r from-pink-500 to-purple-500 rounded-full inline-block absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                             Popular
@@ -81,25 +99,5 @@ export default function Prices() {
                 </div>
             </div>
         </div>
-
-    )
-}
-
-function CheckIcon(props) {
-    return (
-        <svg
-            {...props}
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        >
-            <polyline points="20 6 9 17 4 12" />
-        </svg>
     )
 }

@@ -1,3 +1,4 @@
+'use client';
 export default function Prices() {
     return (
         <>
@@ -105,20 +106,54 @@ export default function Prices() {
 }
 
 function CheckIcon(props) {
-    return (
-        <svg
-            {...props}
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        >
-            <polyline points="20 6 9 17 4 12" />
-        </svg>
-    )
+    
+    const getCookie = (name) => {
+    // Check if code is running in the browser environment
+    if (typeof window !== "undefined") {
+        const cookies = document.cookie.split('; ').reduce((acc, cookie) => {
+            const [key, value] = cookie.split('=');
+            acc[key] = value;
+            return acc;
+        }, {});
+        return cookies[name] || '';
+    }
+    // Return a default value (or handle it as needed) when not in the browser environment
+    return '';
+};
+
+    const cookieValue = getCookie('USER_EXPERIMENT');
+    const bucket = cookieValue ? cookieValue.split('.')[0] : '';
+    console.log("Bucket is ", bucket);
+    console.log('Bucket equals A:', 'A' === bucket);
+    console.log('Bucket equals B:', 'B' === bucket);
+    console.log('Bucket equals C:', 'C' === bucket);
+
+
+    const A = (
+            <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-blue-600 hover:text-blue-800 transition duration-200 ease-in-out transform hover:scale-110">
+    <polyline points="20 6 9 17 4 12" />
+</svg>
+    );
+
+    const B = (
+            <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 xl:h-16 xl:w-16 2xl:h-20 2xl:w-20">
+  <polyline points="20 6 9 17 4 12" />
+</svg>
+    );
+
+    const C = (
+            <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4a5568" strokeWidth="2.5" strokeLinecap="butt" strokeLinejoin="arcs" class="hover:stroke-blue-500 transition-colors duration-300 ease-in-out">
+    <polyline points="20 6 9 17 4 12" />
+</svg>
+    );
+
+    switch (bucket) {
+        case 'A':
+            return A;
+        case 'B':
+            return B;
+        case 'C':
+            return C;
+    }
+    
 }
